@@ -1,0 +1,142 @@
+/* Mini Tablet Size Responsive */
+@media screen and (min-width: 480px) {
+    header .logo {
+        margin-left: 35px;
+    }
+
+    header .canvas-menu {
+        margin-right: 20px;
+    }
+
+    section.jumbotron {
+        height: 30rem;
+        gap: 20px;
+    }
+
+    .jumbotron .learn-more {
+        margin-top: 40px;
+    }
+
+    section.detail-cafe {
+        padding: 35px;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Tablet Size Responsive */
+@media screen and (min-width: 640px) {
+    header .canvas-menu {
+        display: none;
+    }
+
+    header nav {
+        display: inline-flex;
+        position: relative;
+        margin-right: 35px;
+    }
+
+    header nav .links-nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    section.jumbotron {
+        height: 40rem;
+    }
+
+    .jumbotron .title {
+        font-size: 30px;
+    }
+
+    .jumbotron .description {
+        font-size: 24px;
+    }
+
+    .jumbotron .learn-more {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .foods {
+        padding: 15px;
+    }
+
+    .foods .image-food.two {
+        order: 1;
+    }
+
+    .container {
+        padding: 35px;
+    }
+
+    .list-cards {
+        gap: 30px;
+    }
+
+    .list-content .big-title h2 {
+        font-size: 50px;
+    }
+
+    .container-detail-cafe .title {
+        padding-top: 80px;
+    }
+
+    section.detail-cafe {
+        padding: 35px;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .detail-cafe .image-cafe {
+        order: 2;
+    }
+
+    .detail-cafe .description-cafe {
+        order: 1;
+    }
+
+    section.favorite-cafe {
+        padding: 100px 50px 0px 50px;
+    }
+
+    footer {
+        text-align: justify;
+    }
+
+    footer .footer-links {
+        padding: 35px;
+    }
+
+    footer .footer-links .links .title {
+        text-align: justify;
+    }
+}
+
+/* Desktop Size Responsive */
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 20px;
+    }
+
+    .foods {
+        padding: 30px;
+    }
+
+    .container {
+        padding: 50px;
+    }
+
+    section.detail-cafe {
+        padding: 50px;
+        gap: 20px;
+    }
+
+    footer .footer-links {
+        padding: 50px;
+    }
+
+    footer .footer-copyright p {
+        font-size: 16px;
+    }
+}

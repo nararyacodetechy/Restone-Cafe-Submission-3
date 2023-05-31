@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --main-color: #1B1B1B;
+    --secondary-color: #F2C07B;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: normal;
+    font-size: 14px;
+    position: relative;
+    background-color: #eee;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    color: var(--secondary-color);
+}
+
+/* Start Header Section */
+
+/* Phone Size Responsive */
+header {
+    top: 0;
+    z-index: 2;
+    position: fixed;
+    padding: 15px 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    align-items: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+header a {
+    color: whitesmoke;
+    transition: all 0.4s ease;
+}
+
+header a:hover {
+    color: var(--secondary-color);
+}
+
+header .logo {
+    margin-left: 20px;
+    padding: 11px;
+    cursor: pointer;
+}
+
+header .canvas-menu {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 11px 15px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+header nav {
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+header nav .links-nav a {
+    padding: 12px;
+}
+
+header nav.open {
+    z-index: 3;
+    display: inline-flex;
+    padding: 200px 20px;
+    width: 75%;
+    height: 100vh;
+    background-color: var(--main-color);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header nav.open .links-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+/* Start Header Section */
+
+/* Start Main Section */
+
+main {
+    z-index: 1;
+    height: auto;
+    min-height: 100vh;
+}
+
+section.jumbotron {
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    background: url(./../../dist/images/hero-image_1-small.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 0px;
+}
+
+.jumbotron h1 {
+    margin-top: 50px;
+}
+
+.jumbotron h1, .jumbotron h2, .jumbotron a {
+    z-index: 1;
+}
+
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    opacity: 0.9;
+}
+
+.jumbotron .title {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.jumbotron .description {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.jumbotron .learn-more {
+    margin-top: 20px;
+    border: 1px solid var(--secondary-color);
+    padding: 10px 15px;
+    color: var(--secondary-color);
+    border-radius: 5px;
+    font-size: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.jumbotron .learn-more:hover {
+    background-color: var(--secondary-color);
+    color: whitesmoke;
+}
+
+/* Start Main Section */
+
+section.foods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    height: auto;
+}
+
+.foods .image-food {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foods .image-food picture img {
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    min-height: 250px;
+    background-color: #7f7f7f;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.foods .description-food {
+    padding: 40px 20px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+}
+
+.description-food .big-title-food {
+    margin-bottom: 20px;
+}
+
+.description-food .big-title-food h2 {
+    font-size: 30px;
+}
+
+.description-food .type-food {
+    margin-bottom: 10px;
+}
+
+section.list-content .big-title {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.list-content .big-title h2 {
+    font-size: 50px;
+    color: #363636;
+    font-weight: 700;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-cards {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    border-radius: 10px;
+    min-width: 200px;
+    max-width: 450px;
+    height: auto;
+    background-color: var(--main-color);
+    transition: all .2s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card:hover:before {
+    position: absolute;
+    border-radius: 10px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card .picture {
+    position: relative;
+    height: 200px;
+}
+
+.card .picture img {
+    border-radius: 10px 10px 0 0;
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card .picture .city-templates {
+    z-index: 1;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 0 3px 3px 0;
+    top: 20px;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    position: absolute;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card .description {
+    padding: 20px;
+    color: whitesmoke;
+}
+
+.card .description .title {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.card .description .rating {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #eee;
+}
+
+.card .description .card-description {
+    display: -webkit-box;
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: whitesmoke;
+}
+
+.container-detail-cafe {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.container-detail-cafe .title {
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+}
+
+section.detail-cafe {
+    background-color: white;
+    height: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-cafe .image-cafe {
+    width: 100%;
+    height: auto;
+}
+
+.detail-cafe .image-cafe img {
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.detail-cafe .costumer-riview {
+    margin-top: 20px;
+}
+
+.detail-cafe .costumer-riview .costumer {
+    margin-top: 15px;
+    width: auto;
+    border-left: 1px solid #7f7f7f;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.detail-cafe .costumer-riview .costumer p {
+    padding-left: 15px;
+    font-weight: 700;
+}
+
+.detail-cafe .costumer-riview .costumer p.riview {
+    font-weight: 500;
+}
+
+.detail-cafe .costumer-riview .costumer span {
+    margin-left: 10px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.detail-cafe .description-cafe {
+    text-align: justify;
+    line-height: 24px;
+}
+
+.detail-cafe span {
+    color: black;
+    font-weight: 700;
+}
+
+.description-cafe .description {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-cafe .menus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+    text-align: left;
+}
+
+.detail-cafe .menus li {
+    list-style: decimal;
+}
+
+.detail-cafe .menus .foods {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.detail-cafe .menus .drinks {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.like {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #db0000;
+
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50%;
+    border: 0;
+
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+section.favorite-cafe {
+    padding: 100px 20px 0px 20px;
+}
+
+.favorite-cafe .container-favorite {
+    margin: 20px 0 0 0;
+}
+
+.search-favorite {
+    width: 100%;
+    display: flex;
+}
+
+.search-favorite input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid var(--secondary-color);
+}
+
+.search-favorite button {
+    padding: 0px 20px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+}
+
+/* End Main Section */
+
+/* Start Footer Section  */
+
+footer {
+    background-color: var(--main-color);
+    text-align: center;
+    bottom: 0;
+}
+
+footer .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.links .title {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: left;
+    text-align: center;
+}
+
+.links .sub-links {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.links .sub-links li {
+    list-style: none;
+}
+
+.links .sub-links li a {
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    transition: .3s ease-in-out;
+    padding: 15px 0;
+}
+
+.links .sub-links li a:hover {
+    padding-left: 5px;
+    color: var(--secondary-color);
+}
+
+footer {
+    /* padding: 20px 0px; */
+}
+
+footer .footer-copyright {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #181818;
+}
+
+.footer-copyright p {
+    color: #eee;
+    font-size: 14px;
+}
+
+/* End Footer Section  */
