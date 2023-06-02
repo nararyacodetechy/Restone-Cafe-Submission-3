@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 class FavoriteMovieShowPresenter {
   constructor({ view, favoriteCafes }) {
     this._view = view;

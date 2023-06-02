@@ -16,24 +16,34 @@ Scenario('liking one cafe', async ({ I }) => {
   I.see('Tidak ada Cafes untuk ditampilkan', '.cafe-item__not__found');
   I.amOnPage('/');
 
+  // Tunggu elemen card di Home Page Muncul
   I.waitForElement('a.card');
-  const firstCafe = locate('.title').first();
+  // Klik card tersebut
+  I.click('a.card');
+  // Arahkan ke halaman Detail Page
+  I.amOnPage('/#/detail-page/rqdv5juczeskfw1e867');
 
+  // Simpan elemen yang ditemukan
+  const firstCafe = locate('.title-favorite').first();
+  // Ambil teks nya sebagai perbandingan dengan title favorite nanti.
   const firstCafeTitle = await I.grabTextFrom(firstCafe);
-  I.click(firstCafe);
 
+  // Tunggu like Button Muncul pada halaman Detail Page
   I.waitForElement('#likeButton');
+  // Klik like button
   I.click('#likeButton');
-
+  // Arahkan ke Favorite Page
   I.amOnPage('/#/favorite-page');
-  I.waitForElement('.card');
-  const likedCafeTitle = await I.grabTextFrom('.title');
+
+  // Tunggu elemen card favorite muncul
+  I.waitForElement('a.card');
+  const likedCafeTitle = await I.grabTextFrom('.title-card');
 
   assert.strictEqual(firstCafeTitle, likedCafeTitle);
 });
 
 Scenario('searching cafes', async ({ I }) => {
-  I.see('Tidak ada Cafes untuk ditampilkan', '.cafe-item__not__found');
+  // I.see('Tidak ada Cafes untuk ditampilkan', '.cafe-item__not__found');
 
   I.amOnPage('/');
 

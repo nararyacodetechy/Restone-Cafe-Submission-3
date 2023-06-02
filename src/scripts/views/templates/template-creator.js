@@ -17,7 +17,7 @@ const createCafeItemTemplate = (cafe) => `
             <p tabindex="0" class="city-templates">📍 ${cafe.city}</p>
         </div>
         <div class="description">
-            <p tabindex="0" class="title">${cafe.name}</p>
+            <p tabindex="0" class="title title-card">${cafe.name}</p>
             <p tabindex="0" class="rating">⭐️ ${cafe.rating}</p>
             <p tabindex="0" class="card-description">${cafe.description}</p>
         </div>
@@ -25,7 +25,7 @@ const createCafeItemTemplate = (cafe) => `
 `;
 
 const createCafeDetailTemplate = (cafe) => `
-    <p tabindex="0" class="title">${cafe.name}</p>
+    <p tabindex="0" class="title title-favorite">${cafe.name}</p>
     <section class="detail-cafe">
         <div class="image-cafe">
             <picture>

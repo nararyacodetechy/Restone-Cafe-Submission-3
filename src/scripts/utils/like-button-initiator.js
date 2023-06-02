@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import FavoriteCafeIdb from '../data/favorite-restone-idb';
 import {
   createLikeButtonTemplate,
