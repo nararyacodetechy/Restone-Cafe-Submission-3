@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
 const assert = require('assert');
 
-Feature('Liking Movies');
+Feature('Liking Cafes');
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite-page');
 });
 
 Scenario('showing empty liked cafes', ({ I }) => {
-  I.seeElement('#query');
+  I.waitForElement('#query');
   I.see('Tidak ada Cafes untuk ditampilkan', '.cafe-item__not__found');
 });
 
@@ -16,21 +16,20 @@ Scenario('liking one cafe', async ({ I }) => {
   I.see('Tidak ada Cafes untuk ditampilkan', '.cafe-item__not__found');
   I.amOnPage('/');
 
-  I.waitForElement('.card');
-  I.click(locate('.card').first());
+  I.waitForElement('a.card');
+  const firstCafe = locate('.title').first();
 
-  const firstFilm = locate('.title').first();
-  const firstFilmTitle = await I.grabTextFrom(firstFilm);
-  I.click(firstFilm);
+  const firstCafeTitle = await I.grabTextFrom(firstCafe);
+  I.click(firstCafe);
 
   I.waitForElement('#likeButton');
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite-page');
-  I.seeElement('.card');
+  I.waitForElement('.card');
+  const likedCafeTitle = await I.grabTextFrom('.title');
 
-  const likedFilmTitle = await I.grabTextFrom('.title');
-  assert.strictEqual(firstFilmTitle, likedFilmTitle);
+  assert.strictEqual(firstCafeTitle, likedCafeTitle);
 });
 
 Scenario('searching cafes', async ({ I }) => {
@@ -38,13 +37,13 @@ Scenario('searching cafes', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.card');
+  I.waitForElement('a.card');
 
   const titles = [];
 
   // eslint-disable-next-line no-plusplus
   for (let i = 1; i <= 3; i++) {
-    I.click(locate('.card').at(i));
+    I.click(locate('a.card').at(i));
     I.waitForElement('#likeButton');
     I.click('#likeButton');
 
@@ -53,5 +52,5 @@ Scenario('searching cafes', async ({ I }) => {
     I.amOnPage('/');
   }
   I.amOnPage('/#/favorite-page');
-  I.seeElement('#query');
+  I.waitForElement('#query');
 });
