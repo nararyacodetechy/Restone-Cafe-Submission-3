@@ -20,8 +20,6 @@ Scenario('liking one cafe', async ({ I }) => {
   I.waitForElement('a.card');
   // Klik card tersebut
   I.click('a.card');
-  // Arahkan ke halaman Detail Page
-  I.amOnPage('/#/detail-page/rqdv5juczeskfw1e867');
 
   // Simpan elemen yang ditemukan
   const firstCafe = locate('.title-favorite').first();

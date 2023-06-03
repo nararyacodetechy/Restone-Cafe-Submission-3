@@ -10,9 +10,9 @@ const createCafeItemTemplate = (cafe) => `
     <a href="/#/detail-page/${cafe.id}" class="card">
         <div class="picture">
             <picture>
-                <source class="lazyload" type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
-                <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
-                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}" alt="${cafe.name}" tabindex="0" crossorigin="anonymous">
+                <source class="lazyload" type="image/webp" data-srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
+                <source class="lazyload" media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
+                <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}" alt="${cafe.name}" tabindex="0" crossorigin="anonymous">
             </picture>
             <p tabindex="0" class="city-templates">📍 ${cafe.city}</p>
         </div>
@@ -29,9 +29,9 @@ const createCafeDetailTemplate = (cafe) => `
     <section class="detail-cafe">
         <div class="image-cafe">
             <picture>
-                <source class="lazyload" type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
-                <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
-                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}" alt="${cafe.name}" tabindex="0" crossorigin="anonymous">
+                <source class="lazyload" type="image/webp" data-srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
+                <source class="lazyload" media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}">
+                <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + cafe.pictureId}" alt="${cafe.name}" tabindex="0" crossorigin="anonymous">
             </picture>
             <div class="costumer-riview">
                 <span tabindex="0">Costumer Riviews :</span>
